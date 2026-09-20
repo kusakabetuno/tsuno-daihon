@@ -1,5 +1,217 @@
 [
   {
+    "title": "ブレブレーメンズ",
+    "male": 3,
+    "female": 2,
+    "any": 0,
+    "minutes": 50,
+    "genres": [
+      "コメディ",
+      "シリアス",
+      "ラブストーリー"
+    ],
+    "url": "https://writening.net/page?w7bxsF",
+    "new": true,
+    "image": ""
+  },
+  {
+    "title": "死にたがりの吸血鬼",
+    "male": 0,
+    "female": 1,
+    "any": 3,
+    "minutes": 30,
+    "genres": [
+      "ファンタジー",
+      "シリアス",
+      "ラブストーリー"
+    ],
+    "url": "https://writening.net/page?SmNFbm",
+    "new": true,
+    "image": ""
+  },
+  {
+    "title": "ホワイトライフ 白い髪の二人と、果てしない道の先",
+    "male": 0,
+    "female": 1,
+    "any": 3,
+    "minutes": 20,
+    "genres": [
+      "ファンアジー",
+      "シリアス"
+    ],
+    "url": "https://writening.net/page?EhrhR2",
+    "new": true,
+    "image": ""
+  },
+  {
+    "title": "我が輩は紳士な猫である",
+    "male": 1,
+    "female": 1,
+    "any": 1,
+    "minutes": 20,
+    "genres": [
+      "ファンタジー",
+      "ラブコメディ"
+    ],
+    "url": "https://writening.net/page?7f3NgS",
+    "new": true,
+    "image": ""
+  },
+  {
+    "title": "縁の目には霞が降る",
+    "male": 0,
+    "female": 1,
+    "any": 3,
+    "minutes": 30,
+    "genres": [
+      "ファンタジー",
+      "シリアス"
+    ],
+    "url": "https://writening.net/page?jaZ64F",
+    "new": true,
+    "image": ""
+  },
+  {
+    "title": "花の籠",
+    "male": 0,
+    "female": 2,
+    "any": 1,
+    "minutes": 60,
+    "genres": [
+      "学園",
+      "ラブストーリー"
+    ],
+    "url": "https://writening.net/page?v6Dhes",
+    "new": true,
+    "image": ""
+  },
+  {
+    "title": "罪のコラージュ",
+    "male": 0,
+    "female": 3,
+    "any": 1,
+    "minutes": 40,
+    "genres": [
+      "学園",
+      "シリアス"
+    ],
+    "url": "https://kakuyomu.jp/works/822139841322085371/episodes/822139841322096626",
+    "new": true,
+    "image": ""
+  },
+  {
+    "title": "ネバーエンド",
+    "male": 1,
+    "female": 1,
+    "any": 2,
+    "minutes": 30,
+    "genres": [
+      "ファンタジー",
+      "シリアス"
+    ],
+    "url": "https://kakuyomu.jp/works/822139839848941103/episodes/822139839849102494",
+    "new": true,
+    "image": ""
+  },
+  {
+    "title": "オセロ・ストーリー",
+    "male": 0,
+    "female": 1,
+    "any": 7,
+    "minutes": 120,
+    "genres": [
+      "ファンタジー",
+      "シリアス"
+    ],
+    "url": "https://kakuyomu.jp/works/16817330666582849788/episodes/16817330666695736622",
+    "new": true,
+    "image": ""
+  },
+  {
+    "title": "鬼と魂（会社員女性ver）",
+    "male": 0,
+    "female": 1,
+    "any": 3,
+    "minutes": 40,
+    "genres": [
+      "ファンタジー",
+      "シリアス"
+    ],
+    "url": "https://writening.net/page?6LHkba",
+    "new": true,
+    "image": ""
+  },
+  {
+    "title": "鬼と魂",
+    "male": 0,
+    "female": 0,
+    "any": 4,
+    "minutes": 40,
+    "genres": [
+      "ファンタジー",
+      "シリアス"
+    ],
+    "url": "https://writening.net/page?6LHkba",
+    "new": true,
+    "image": ""
+  },
+  {
+    "title": "シングル・タックス",
+    "male": 2,
+    "female": 2,
+    "any": 0,
+    "minutes": 30,
+    "genres": [
+      "ラブストーリー",
+      "シリアス"
+    ],
+    "url": "https://writening.net/page?23HrYr",
+    "new": true,
+    "image": ""
+  },
+  {
+    "title": "サマーダンス・シカーダ",
+    "male": 1,
+    "female": 2,
+    "any": 1,
+    "minutes": 60,
+    "genres": [
+      "ファンタジー",
+      "シリアス"
+    ],
+    "url": "https://writening.net/page?ZQwcxL",
+    "new": true,
+    "image": ""
+  },
+  {
+    "title": "魔女と約束の剣",
+    "male": 1,
+    "female": 1,
+    "any": 3,
+    "minutes": 60,
+    "genres": [
+      "ファンタジー",
+      "シリアス"
+    ],
+    "url": "https://writening.net/page?xpehi7",
+    "new": true,
+    "image": ""
+  },
+  {
+    "title": "人形の診療録（オネットのカルテ）",
+    "male": 0,
+    "female": 1,
+    "any": 2,
+    "minutes": 50,
+    "genres": [
+      "ファンタジー",
+      "シリアス"
+    ],
+    "url": "https://writening.net/page?fsJTGh",
+    "new": true,
+    "image": ""
+  },
+  {
     "title": "自由の海賊",
     "male": 1,
     "female": 1,
@@ -10,7 +222,8 @@
       "シリアス"
     ],
     "url": "https://writening.net/page?YsS55Z",
-    "new": true
+    "new": true,
+    "image": ""
   },
   {
     "title": "カルセドニーとアンジェリカ",
@@ -22,7 +235,8 @@
       "ファンタジー"
     ],
     "url": "https://writening.net/page?u7gQX6",
-    "new": true
+    "new": true,
+    "image": ""
   },
   {
     "title": "嘘つき勇者と恋する魔王様",
@@ -35,7 +249,8 @@
       "ラブコメ"
     ],
     "url": "https://writening.net/page?ifntv6",
-    "new": true
+    "new": true,
+    "image": ""
   },
   {
     "title": "双子と星と天の川",
@@ -47,7 +262,8 @@
       "ファンタジー"
     ],
     "url": "https://writening.net/page?tLMyHF",
-    "new": true
+    "new": true,
+    "image": ""
   },
   {
     "title": "華麗なる怪盗コーデュロイとデニー",
@@ -60,7 +276,8 @@
       "シリアス"
     ],
     "url": "https://writening.net/page?MBnUrB",
-    "new": false
+    "new": false,
+    "image": ""
   },
   {
     "title": "ワンコイン・ホームズ",
@@ -73,6 +290,7 @@
       "シリアス"
     ],
     "url": "https://writening.net/page?vxtHV5",
-    "new": false
+    "new": false,
+    "image": ""
   }
 ]
