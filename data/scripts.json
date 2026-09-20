@@ -1,5 +1,35 @@
 [
   {
+    "title": "ウィザーズ・ローン",
+    "male": 0,
+    "female": 1,
+    "any": 4,
+    "minutes": 80,
+    "genres": [
+      "ファンタジー",
+      "シリアス"
+    ],
+    "url": "https://writening.net/page?HRz2fU",
+    "new": true,
+    "newUntil": "2026-10-20",
+    "image": ""
+  },
+  {
+    "title": "ラストエドゥアール",
+    "male": 0,
+    "female": 0,
+    "any": 2,
+    "minutes": 30,
+    "genres": [
+      "ファンタジー",
+      "シリアス"
+    ],
+    "url": "https://writening.net/page?Gw4HRb",
+    "new": true,
+    "newUntil": "2026-10-20",
+    "image": ""
+  },
+  {
     "title": "蛇姫",
     "male": 0,
     "female": 1,
