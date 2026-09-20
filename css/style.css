@@ -52,3 +52,67 @@ footer{border-top-color:#d5ccb8}
 .adminItem{border-color:#d8cfbb!important}
 .drawer{background:var(--card)}
 @media(max-width:700px){.overlay{background:#29301f66}}
+
+/* v13 Strong Matcha & Cookie palette */
+:root{
+  --bg:#f8f4e9;
+  --card:#fffdf8;
+  --text:#302f29;
+  --muted:#716c61;
+  --line:#d9cdb8;
+  --accent:#d9b983;
+  --matcha:#5f7247;
+  --matcha-dark:#3f5434;
+  --matcha-soft:#e5ead9;
+  --cookie:#d7b27a;
+  --cookie-soft:#f0dfc4;
+  --cookie-light:#f5e8d2;
+  --cookie-dark:#805a32;
+}
+body{background:var(--bg)}
+.header{
+  max-width:none;
+  padding-left:max(22px,calc((100% - 1050px)/2 + 22px));
+  padding-right:max(22px,calc((100% - 1050px)/2 + 22px));
+  background:var(--matcha-dark);
+  border-bottom-color:#35462c;
+  color:#fffdf5;
+}
+.brand small{color:#e6eadc}.desktop a{color:#fffdf5}.menu{color:#fffdf5;border-color:#91a181}
+.hero{background:linear-gradient(135deg,#fffdf8 0%,#f4ead9 58%,#e1e8d4 100%);border-color:#d5c8b1}
+.button{background:var(--matcha-dark);color:#fff;border-color:#35462c}.button:hover{background:#33462b}
+.sectionHead h2,.search h2,.profileBody h2,.message h2,.rulesBlock h2{color:var(--matcha-dark)}
+.eyebrow{color:#758064}
+.card,.result{border-color:#d8c7ab;box-shadow:0 2px 8px #6e57320b}
+.thumb{background:linear-gradient(145deg,#ead4b2,#d9b77f)}
+.badge{background:var(--matcha-dark);color:#fffdf5}
+.cardBody h3,.result h3{
+  display:block;
+  margin:-3px -5px 10px;
+  padding:9px 10px;
+  border-radius:7px;
+  background:var(--cookie-light);
+  color:#654722;
+  border-left:4px solid var(--cookie-dark);
+}
+.cardBody h3{font-size:17px}.result h3{font-size:16px}
+.search{border-color:#d3c4aa}.filters select{border-color:#ccb995}.result:hover{border-color:var(--cookie-dark)}
+.message{background:linear-gradient(135deg,#f1dfc2,#e4ead7);border-color:#d4c5aa}
+.profile{border-color:#d5c8b1}.profileLinks a{background:#f0dfc4;border-color:#d0b98f}.profileLinks a:hover{background:#e4ead7;border-color:#9dad89}
+footer{
+  max-width:none;
+  margin:35px 0 0;
+  padding:28px max(22px,calc((100% - 1050px)/2 + 22px));
+  background:var(--matcha-dark);
+  border-top:0;
+  color:#e8ecdf;
+}
+.adminLink{color:#e8ecdf}.adminLink:hover{color:#fff}
+.rulesHero{border-color:#d3c4aa}.rulesBlock{border-color:#d3c4aa}.credit{border-color:#d5c8b1}
+.drawer{background:#fffdf8}.drawer a:hover{background:var(--matcha-soft)}
+.adminPanel,.loginBox{background:var(--card)!important;border-color:#d5c8b1!important}
+.admin .primary,.loginBox button{background:var(--matcha-dark)!important;border-color:#35462c!important}
+@media(max-width:700px){
+  .header{padding-left:14px;padding-right:14px}
+  footer{padding-left:14px;padding-right:14px}
+}
