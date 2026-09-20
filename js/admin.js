@@ -4,7 +4,7 @@ function plus30Days(){const d=new Date();d.setDate(d.getDate()+30);return d.toIS
 function expired(date){return date && new Date(date+'T23:59:59') < new Date()}
 function normalize(x){let isNew=Boolean(x.new),until=String(x.newUntil||'');if(isNew&&until&&expired(until)){isNew=false;until=''}if(isNew&&!until)until=plus30Days();return {title:String(x.title||''),male:+x.male||0,female:+x.female||0,any:+x.any||0,minutes:+x.minutes||0,genres:Array.isArray(x.genres)?x.genres:[],url:String(x.url||''),new:isNew,newUntil:until,image:String(x.image||'')}}
 function showPreview(){const p=$('imagePreview');if(currentImage){p.src=currentImage;p.style.display='block'}else{p.removeAttribute('src');p.style.display='none'}}
-function render(){const list=$('list'); list.innerHTML=''; if(!scripts.length){list.innerHTML='<p class="note">台本がありません。</p>';return} scripts.forEach((s,i)=>{const d=document.createElement('div');d.className='adminItem';const info=document.createElement('div');const strong=document.createElement('strong');strong.textContent=s.title;const small=document.createElement('small');small.textContent=`${s.male+s.female+s.any}人（男${s.male}・女${s.female}・不問${s.any}）｜${s.genres.join('・')}｜約${s.minutes}分｜NEW:${s.new?'ON（'+(s.newUntil||'期限未設定')+'まで）':'OFF'}｜画像:${s.image?'あり':'なし'}`;info.append(strong,small);const a=document.createElement('div');a.className='actions';const e=document.createElement('button');e.textContent='編集';e.onclick=()=>edit(i);const del=document.createElement('button');del.textContent='削除';del.className='danger';del.onclick=()=>{if(confirm(`「${s.title}」を削除しますか？`)){scripts.splice(i,1);if(editing===i)reset();render();status('削除しました。最後に scripts.json を保存してください。')}};a.append(e,del);d.append(info,a);list.append(d)})}
+function render(){const list=$('list'); list.innerHTML=''; if(!scripts.length){list.innerHTML='<p class="note">台本がありません。</p>';return} scripts.forEach((s,i)=>{const d=document.createElement('div');d.className='adminItem';const info=document.createElement('div');const strong=document.createElement('strong');strong.textContent=s.title;const small=document.createElement('small');small.textContent=`${s.male+s.female+s.any}人（男${s.male}・女${s.female}・不問${s.any}）｜${s.genres.join('・')}｜約${s.minutes}分｜NEW:${s.new?'ON（'+(s.newUntil||'期限未設定')+'まで）':'OFF'}｜画像:${s.image?'あり':'なし'}`;info.append(strong,small);const a=document.createElement('div');a.className='actions';const e=document.createElement('button');e.textContent='編集';e.onclick=()=>edit(i);const del=document.createElement('button');del.textContent='削除';del.className='danger';del.onclick=()=>{if(confirm(`「${s.title}」を削除しますか？`)){scripts.splice(i,1);if(editing===i)reset();render();status('削除しました。最後に scripts.json を保存してください。')}};const x=document.createElement('button');x.textContent='この台本をXで告知する';x.type='button';x.className='xShare';x.onclick=()=>shareToX(s);a.append(e,del,x);d.append(info,a);list.append(d)})}
 function reset(){editing=-1;currentImage='';$('formTitle').textContent='台本を新規登録';$('save').textContent='新規登録する';$('cancel').hidden=true;['title','genres','url'].forEach(x=>$(x).value='');$('male').value=0;$('female').value=0;$('any').value=0;$('minutes').value=10;$('imageFile').value='';$('isNew').checked=true;showPreview()}
 function edit(i){editing=i;const s=scripts[i];currentImage=s.image||'';$('formTitle').textContent='台本を編集';$('save').textContent='変更を保存';$('cancel').hidden=false;$('title').value=s.title;$('male').value=s.male;$('female').value=s.female;$('any').value=s.any;$('minutes').value=s.minutes;$('genres').value=s.genres.join(', ');$('url').value=s.url;$('isNew').checked=!!s.new;$('imageFile').value='';showPreview();scrollTo({top:document.querySelectorAll('.adminPanel')[1].offsetTop-20,behavior:'smooth'})}
 $('imageFile').onchange=e=>{const f=e.target.files[0];if(!f)return;if(f.size>1500000){alert('画像が大きすぎます。1.5MB以下を目安にしてください。');e.target.value='';return}const r=new FileReader();r.onload=()=>{currentImage=r.result;showPreview()};r.readAsDataURL(f)};
@@ -14,4 +14,31 @@ function setData(data,msg){if(!Array.isArray(data))throw Error();scripts=data.ma
 $('loadSite').onclick=async()=>{try{const r=await fetch('data/scripts.json',{cache:'no-store'});setData(await r.json(),'現在のサイトデータを読み込みました。')}catch(e){status('読み込みに失敗しました。ファイル選択を使ってください。')}};
 $('file').onchange=async e=>{try{setData(JSON.parse(await e.target.files[0].text()),'選択した scripts.json を読み込みました。')}catch(err){alert('JSONファイルを読み込めませんでした。')}};
 async function autoLoad(){try{const r=await fetch('data/scripts.json?ts='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error();setData(await r.json(),'現在のサイトデータを自動で読み込みました。');}catch(e){status('サイトデータを自動で読み込めませんでした。「サイトのデータを読み込む」またはファイル選択を使ってください。')}}
+
+function shareToX(s){
+  const people=s.male+s.female+s.any;
+  const genre=s.genres.length?s.genres.join('・'):'';
+  const lines=[
+    '【新着台本】',
+    `「${s.title}」`,
+    '',
+    `${people}人用／約${s.minutes}分`,
+    genre,
+    '',
+    '台本はこちら',
+    s.url
+  ].filter((line,i,arr)=>line!=='' || (i>0 && arr[i-1]!==''));
+  const text=lines.join('\n');
+  window.open('https://x.com/intent/post?text='+encodeURIComponent(text),'_blank','noopener,noreferrer');
+}
+$('clearAllNew').onclick=()=>{
+  const count=scripts.filter(s=>s.new).length;
+  if(!count){alert('NEWがONの台本はありません。');return}
+  if(!confirm(`NEWがONの台本 ${count}件をすべてOFFにしますか？`))return;
+  scripts=scripts.map(s=>({...s,new:false,newUntil:''}));
+  if(editing>=0){$('isNew').checked=false}
+  render();
+  status(`${count}件のNEWをOFFにしました。最後に scripts.json を保存してください。`);
+};
+
 $('download').onclick=()=>{const blob=new Blob([JSON.stringify(scripts,null,2)+'\n'],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='scripts.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);status('scripts.json を保存しました。GitHub の data/scripts.json と差し替えてください。')};autoLoad();
