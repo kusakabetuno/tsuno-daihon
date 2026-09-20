@@ -1,5 +1,36 @@
 [
   {
+    "title": "蛇姫",
+    "male": 0,
+    "female": 1,
+    "any": 2,
+    "minutes": 20,
+    "genres": [
+      "ファンタジー",
+      "シリアス"
+    ],
+    "url": "https://kakuyomu.jp/works/2912051602791158488/episodes/2912051602791404644",
+    "new": true,
+    "newUntil": "2026-10-20",
+    "image": ""
+  },
+  {
+    "title": "ドリームマジック",
+    "male": 1,
+    "female": 1,
+    "any": 2,
+    "minutes": 50,
+    "genres": [
+      "ファンタジー",
+      "シリアス",
+      "学園"
+    ],
+    "url": "https://writening.net/page?st2yUH",
+    "new": true,
+    "newUntil": "2026-10-20",
+    "image": ""
+  },
+  {
     "title": "エチュードを君と",
     "male": 0,
     "female": 0,
