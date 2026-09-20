@@ -11,5 +11,68 @@
     ],
     "url": "https://writening.net/page?YsS55Z",
     "new": true
+  },
+  {
+    "title": "カルセドニーとアンジェリカ",
+    "male": 0,
+    "female": 1,
+    "any": 2,
+    "minutes": 30,
+    "genres": [
+      "ファンタジー"
+    ],
+    "url": "https://writening.net/page?u7gQX6",
+    "new": true
+  },
+  {
+    "title": "嘘つき勇者と恋する魔王様",
+    "male": 1,
+    "female": 1,
+    "any": 0,
+    "minutes": 30,
+    "genres": [
+      "ファンタジー",
+      "ラブコメ"
+    ],
+    "url": "https://writening.net/page?ifntv6",
+    "new": true
+  },
+  {
+    "title": "双子と星と天の川",
+    "male": 0,
+    "female": 0,
+    "any": 5,
+    "minutes": 10,
+    "genres": [
+      "ファンタジー"
+    ],
+    "url": "https://writening.net/page?tLMyHF",
+    "new": true
+  },
+  {
+    "title": "華麗なる怪盗コーデュロイとデニー",
+    "male": 3,
+    "female": 2,
+    "any": 0,
+    "minutes": 30,
+    "genres": [
+      "コメディ",
+      "シリアス"
+    ],
+    "url": "https://writening.net/page?MBnUrB",
+    "new": false
+  },
+  {
+    "title": "ワンコイン・ホームズ",
+    "male": 2,
+    "female": 3,
+    "any": 1,
+    "minutes": 50,
+    "genres": [
+      "コメディ",
+      "シリアス"
+    ],
+    "url": "https://writening.net/page?vxtHV5",
+    "new": false
   }
 ]
