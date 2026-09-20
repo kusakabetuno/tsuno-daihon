@@ -19,15 +19,17 @@ function shareToX(s){
   const people=s.male+s.female+s.any;
   const genre=s.genres.length?s.genres.join('・'):'';
   const lines=[
-    '【新着台本】',
+    '【新着台本】投稿しました！',
     `「${s.title}」`,
     '',
-    `${people}人用／約${s.minutes}分`,
+    `${people}人 / 約${s.minutes}分`,
     genre,
     '',
-    '台本はこちら',
-    s.url
-  ].filter((line,i,arr)=>line!=='' || (i>0 && arr[i-1]!==''));
+    '台本URL',
+    s.url,
+    '',
+    '#声劇台本 #新作'
+  ];
   const text=lines.join('\n');
   window.open('https://x.com/intent/post?text='+encodeURIComponent(text),'_blank','noopener,noreferrer');
 }
