@@ -7,15 +7,18 @@ fetch('data/scripts.json').then(r=>r.json()).then(data=>{scripts=data;const peop
 const feedbackForm=$('#feedbackForm'),feedbackScript=$('#feedbackScript'),feedbackStatus=$('#feedbackStatus'),feedbackSubmit=$('#feedbackSubmit');
 function fillFeedbackScripts(){
  if(!feedbackScript)return;
+ const list=$('#feedbackScriptList');
+ if(!list)return;
  const esc=v=>String(v).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
  const options=[...scripts].sort((a,b)=>String(a.title).localeCompare(String(b.title),'ja'));
- feedbackScript.innerHTML='<option value="">台本を選んでください</option>'+options.map(s=>`<option value="${esc(s.title)}">${esc(s.title)}</option>`).join('');
+ list.innerHTML=options.map(s=>`<option value="${esc(s.title)}"></option>`).join('');
 }
 const feedbackWait=setInterval(()=>{if(scripts.length){clearInterval(feedbackWait);fillFeedbackScripts()}},100);
 if(feedbackForm)feedbackForm.addEventListener('submit',async e=>{
  e.preventDefault();
  const script=feedbackScript.value,name=$('#feedbackName').value.trim(),message=$('#feedbackMessage').value.trim();
  if(!script||!message){feedbackStatus.textContent='台本名と感想・メッセージを入力してください。';return}
+ if(!scripts.some(s=>s.title===script)){feedbackStatus.textContent='候補にある台本名を選択してください。';return}
  feedbackSubmit.disabled=true;feedbackStatus.textContent='送信しています…';
  const data=new URLSearchParams();
  data.set('entry.472955166',script);data.set('entry.2095848672',name);data.set('entry.1119787238',message);
