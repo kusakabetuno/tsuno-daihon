@@ -65,7 +65,7 @@ const feedbackWait=setInterval(()=>{if(scripts.length){clearInterval(feedbackWai
 if(feedbackForm)feedbackForm.addEventListener('submit',async e=>{
  e.preventDefault();
  const script=feedbackScript.value,name=$('#feedbackName').value.trim(),message=$('#feedbackMessage').value.trim();
- if(!script||!message){feedbackStatus.textContent='台本名と感想・メッセージを入力してください。';return}
+ if(!script||!message){feedbackStatus.textContent='台本名と台本感想・ご意見などを入力してください。';return}
  if(!scripts.some(s=>s.title===script)){feedbackStatus.textContent='候補にある台本名を選択してください。';return}
  feedbackSubmit.disabled=true;feedbackStatus.textContent='送信しています…';
  const data=new URLSearchParams();
