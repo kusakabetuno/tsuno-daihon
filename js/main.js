@@ -7,11 +7,59 @@ fetch('data/scripts.json').then(r=>r.json()).then(data=>{scripts=data;const peop
 const feedbackForm=$('#feedbackForm'),feedbackScript=$('#feedbackScript'),feedbackStatus=$('#feedbackStatus'),feedbackSubmit=$('#feedbackSubmit');
 function fillFeedbackScripts(){
  if(!feedbackScript)return;
+ feedbackScript.dataset.ready='1';
+}
+
+function getFeedbackMatches(query){
+ const q=String(query||'').trim().toLocaleLowerCase('ja');
+ const sorted=[...scripts].sort((a,b)=>String(a.title).localeCompare(String(b.title),'ja'));
+ if(!q)return sorted;
+ return sorted.filter(s=>String(s.title).toLocaleLowerCase('ja').includes(q));
+}
+
+function showFeedbackSuggestions(){
  const list=$('#feedbackScriptList');
- if(!list)return;
- const esc=v=>String(v).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
- const options=[...scripts].sort((a,b)=>String(a.title).localeCompare(String(b.title),'ja'));
- list.innerHTML=options.map(s=>`<option value="${esc(s.title)}"></option>`).join('');
+ if(!list||!feedbackScript)return;
+ const matches=getFeedbackMatches(feedbackScript.value);
+ list.innerHTML='';
+ if(!matches.length){
+  const empty=document.createElement('div');
+  empty.className='scriptSuggestEmpty';
+  empty.textContent='該当する台本がありません';
+  list.appendChild(empty);
+ }else{
+  matches.forEach(s=>{
+   const btn=document.createElement('button');
+   btn.type='button';
+   btn.className='scriptSuggestItem';
+   btn.setAttribute('role','option');
+   btn.textContent=s.title;
+   btn.addEventListener('mousedown',e=>{
+    e.preventDefault();
+    feedbackScript.value=s.title;
+    list.hidden=true;
+    feedbackScript.focus();
+   });
+   list.appendChild(btn);
+  });
+ }
+ list.hidden=false;
+}
+
+if(feedbackScript){
+ feedbackScript.addEventListener('focus',showFeedbackSuggestions);
+ feedbackScript.addEventListener('input',showFeedbackSuggestions);
+ feedbackScript.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+   const list=$('#feedbackScriptList');
+   if(list)list.hidden=true;
+  }
+ });
+ document.addEventListener('click',e=>{
+  const box=feedbackScript.closest('.scriptSuggest');
+  const list=$('#feedbackScriptList');
+  if(list&&box&&!box.contains(e.target))list.hidden=true;
+ });
 }
 const feedbackWait=setInterval(()=>{if(scripts.length){clearInterval(feedbackWait);fillFeedbackScripts()}},100);
 if(feedbackForm)feedbackForm.addEventListener('submit',async e=>{
